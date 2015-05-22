@@ -1,6 +1,7 @@
 //----------------------------------------------------------------------
 // Points.cs
 //		Just move, fade, and destroy the points that show up.
+
 using UnityEngine;
 using System.Collections;
 
