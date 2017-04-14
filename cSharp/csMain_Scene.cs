@@ -4,6 +4,7 @@
 
 using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class csMain_Scene : MonoBehaviour 
 {	
@@ -69,7 +70,7 @@ public class csMain_Scene : MonoBehaviour
 	// Unity Update Fn
 	void Update()
 	{
-		if (! Application.isLoadingLevel) 
+        if (! Application.isLoadingLevel) 
 		{
 			CreateCube(csMenu_Scene.currentCubes);
 			CheckMouse();
@@ -91,8 +92,9 @@ public class csMain_Scene : MonoBehaviour
 		}
 		if (csMenu_Scene.returnMenu) 
 		{
-			Application.LoadLevel("menu_scene");
-		}
+			//Application.LoadLevel("menu_scene");
+            SceneManager.LoadScene("menu_scene");
+        }
 	}
 	
 	//----------------------------------------------------------------------

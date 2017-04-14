@@ -3,6 +3,7 @@
 //		Handles the main (and only) menu for the game.
 using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 //----------------------------------------------------------------------
 // csMenu_Scene class for Unity3d MonoBehaviour
@@ -24,7 +25,7 @@ public class csMenu_Scene : MonoBehaviour
 	// GUISkin CustomGUISkin;
 
 	// Private vars
-	private float fontSizeRatio = 1.0f;
+	private float fontSizeRatio = 0.8f;
 	private int fontSize;
 	private AudioSource[] myAudio;
 	private float _oldWidth;
@@ -109,9 +110,10 @@ public class csMenu_Scene : MonoBehaviour
 				returnMenu = false;
 				score = 0;
 				currentCubes = 0;
-				Application.LoadLevel("main_scene");
-			}
-			if (GUI.Button( new Rect(10.0f, r*3.0f, Screen.width-r*10.0f, r), "Rules&Rate")) 
+				//Application.LoadLevel("main_scene");
+                SceneManager.LoadScene("main_scene");
+            }
+            if (GUI.Button( new Rect(10.0f, r*3.0f, Screen.width-r*10.0f, r), "Rules&Rate")) 
 			{
 				myAudio[5].Play();
 				Application.OpenURL("market://details?id=com.AwakeLand.fallleaftapgame");
